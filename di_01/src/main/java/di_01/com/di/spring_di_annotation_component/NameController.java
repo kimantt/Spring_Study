@@ -1,0 +1,15 @@
+package di_01.com.di.spring_di_annotation_component;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class NameController {
+	@Autowired
+	private INameService nameService; // 인터페이스 타입 참조 객체 변수
+	
+	public void show(String name) {
+		System.out.println("NameController : " + nameService.showName(name));
+	}
+	
+}
