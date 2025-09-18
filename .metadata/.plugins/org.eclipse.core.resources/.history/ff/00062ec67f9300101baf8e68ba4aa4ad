@@ -1,0 +1,5 @@
+package di_01.com.di_no_spring_no_di;
+
+public class NameService {
+
+}

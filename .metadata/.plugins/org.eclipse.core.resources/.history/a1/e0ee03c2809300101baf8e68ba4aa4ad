@@ -1,0 +1,10 @@
+package di_01.com.di_no_spring_no_di;
+
+public class NameMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

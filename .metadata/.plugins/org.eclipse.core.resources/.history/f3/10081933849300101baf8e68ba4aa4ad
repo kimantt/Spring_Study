@@ -1,0 +1,12 @@
+package di_01.com.di_no_spring_di_constructor;
+
+public class NameController {
+
+	// NameController 클래스는 NameService에 의존적인 클래스
+	NameService nameService = new NameService();
+	
+	public void show(String name) {
+		System.out.println("NameController : " + nameService.showName(name));
+	}
+	
+}
