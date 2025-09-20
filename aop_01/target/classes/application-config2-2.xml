@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- aop 기능 설정 : annotation 활용 -->
+	<aop:aspectj-autoproxy/>
+	
+	<bean id="performanceAspect" class="aop_01.com.spring_aop.annotation_ex.PerformanceAspect"/>
+	
+	<bean id="circle" class="aop_01.com.spring_aop.annotation_ex.Circle">
+		<property name="radius" value="5"/>
+	</bean>
+	
+	<bean id="eval" class="aop_01.com.spring_aop.annotation_ex.Evaluation">
+		<property name="koreanScore" value="90"/>
+		<property name="englishScore" value="75"/>
+		<property name="mathScore" value="80"/>
+	</bean>
+
+</beans>

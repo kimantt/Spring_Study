@@ -27,7 +27,7 @@ public class Evaluation {
 	
 	public void showResult() {
 		int total = koreanScore + englishScore + mathScore;
-		float avg = (koreanScore + englishScore + mathScore) / 3;
+		float avg = total / 3;
 		
 		System.out.println("국어 / 영어 / 수학");
 		System.out.println("총점 : " + total);

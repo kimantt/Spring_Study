@@ -2,12 +2,12 @@ package aop_01.com.spring_aop.xml2;
 
 public class Circle {
 	
-	private int radius;
+	private double radius;
 	
-	public int getRadius() {
+	public double getRadius() {
 		return radius;
 	}
-	public void setRadius(int radius) {
+	public void setRadius(double radius) {
 		this.radius = radius;
 	}
 

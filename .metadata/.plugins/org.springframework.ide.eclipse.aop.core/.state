@@ -13,5 +13,6 @@
 <aop-reference advice-type="AROUND" bean="1:BeansModel|2:aop_01|3:src/main/resources/application-config.xml|7:beans:6|8:gugudan:25" bean-file="/aop_01/src/main/resources/application-config.xml" bean-start-line="25" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/aop_01/src/main/resources/application-config.xml" source="=aop_01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;aop_01.com.spring_aop.xml{PerformanceAspect.java[PerformanceAspect~trace~QProceedingJoinPoint;" source-start-line="11" target="=aop_01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;aop_01.com.spring_aop.xml{Gugudan.java[Gugudan~setDan~I" target-start-line="11"/>
 </aspect-definition>
 </aop-project>
+<aop-project name="spring_mvc_02_data"/>
 <aop-project name="spring_mvc_01"/>
 </aop-reference-model>
