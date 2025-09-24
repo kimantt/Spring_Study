@@ -1,0 +1,15 @@
+package com.spring_mvc.mybatis.service;
+
+import java.util.ArrayList;
+
+import com.spring_mvc.mybatis.model.ProductVO;
+
+public interface IProductService {
+	// 구현 클래스에서 오버라이딩할 추상 메서드
+	// 규격 지정
+	ArrayList<ProductVO> listAllProduct(); // 전체 상품 조회
+	void insertProduct(ProductVO vo);      // 상품 정보 등록
+	void updateProduct(ProductVO vo);	   // 상품 정보 수정
+	void deleteProduct(String prdNo);	   // 상품 정보 삭제
+	ProductVO detailViewProduct(String prdNo); // 상제 상품 조회
+}

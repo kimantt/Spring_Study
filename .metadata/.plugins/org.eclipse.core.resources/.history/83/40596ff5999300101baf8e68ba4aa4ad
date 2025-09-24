@@ -1,5 +1,0 @@
-package di_01.com.di.spring_di_annotation;
-
-public class AnotherNameService {
-
-}
