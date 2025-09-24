@@ -1,9 +1,13 @@
 package com.spring_mvc.project;
 
+import java.net.URLEncoder;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class NewController {
@@ -24,7 +28,7 @@ public class NewController {
 	// ModelAndView 객체 : 데이터와 view 정보를 객체에 임시저장
 	// 데이터 : addAttribute, view 정보 : setViewName("뷰 페이지 이름")
 	// ModelAndView 객체 반환
-	@RequestMapping("showInfo2")
+	@RequestMapping("/showInfo2")
 	public ModelAndView showInfo2(ModelAndView mv) {
 		mv.addObject("name", "이몽룡");
 		mv.addObject("address", "서울");
@@ -43,6 +47,51 @@ public class NewController {
 		model.addAttribute("name", "홍길동");
 		
 		return mv;
+	}
+	
+	@RequestMapping("/redirect")
+	public String redirect(Model model) {
+		System.out.println("redirect");
+		
+		// /showInfo redirect
+		// 클라이언트에 302응답코드 전달 및 재요청 신호 -> 클라이언트 재요청 진행
+		// redirect: 는 클라이언트 요청이 http로 요청이 들어옴(서버설정 변경 필요)
+		return "redirect:/showInfo";
+	}
+	
+	// redirect 시 파라미터 전송 방법
+	// 1. 쿼리 스트링 방식으로 url에 포함
+	@RequestMapping("/redirectParam1")
+	public String redirectParam() throws Exception {
+		System.out.println("redirectParam 쿼리스트링");
+		String nation = "대한민국1";
+		nation = URLEncoder.encode(nation, "UTF-8");
+		return "redirect:/showRedirectParam/?nation="+nation;
+	}
+	
+	// 2. model 객체에 addAttribute 사용해서 전달
+	@RequestMapping("/redirectParam2")
+	public String redirectParam(Model model) {
+		System.out.println("redirectParam Model");
+		String nation = "대한민국2";
+		model.addAttribute("nation", nation);
+		return "redirect:/showRedirectParam";
+	}
+	
+	// 3. RedirectAttributes 객체 메서드 addAttribute 사용
+	@RequestMapping("/redirectParam3")
+	public String redirectParam2(RedirectAttributes reAttr) {
+		System.out.println("redirectParam RedirectAttributes");
+		String nation = "대한민국3";
+		reAttr.addAttribute("nation", nation);
+		return "redirect:/showRedirectParam";
+	}
+	
+	// redirect 요청 메서드
+	@RequestMapping("/showRedirectParam")
+	public String showParam(@RequestParam("nation") String nation, Model model) {
+		model.addAttribute("nation", nation);
+		return "showRedirectParam";
 	}
 	
 }

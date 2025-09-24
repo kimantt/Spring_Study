@@ -15,4 +15,5 @@
 </aop-project>
 <aop-project name="spring_mvc_02_data"/>
 <aop-project name="spring_mvc_01"/>
+<aop-project name="spring_mvc_jdbc"/>
 </aop-reference-model>
