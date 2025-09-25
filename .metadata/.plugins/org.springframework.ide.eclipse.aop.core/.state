@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="spring_mvc_mybatis"/>
+<aop-project name="spring_mvc_mybatisAjax"/>
 <aop-project name="di_01"/>
 <aop-project name="aop_01">
 <aspect-definition advice-class-name="aop_01.com.spring_aop.xml.PerformanceAspect" advice-method-name="trace" advice-type="AROUND" aspect-end-line-number="16" aspect-name="performanceAspect" aspect-start-line-number="16" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/aop_01/src/main/resources/application-config.xml" pointcut-expression="within(aop_01.com.spring_aop.xml.*)" proxy-target-class="false">

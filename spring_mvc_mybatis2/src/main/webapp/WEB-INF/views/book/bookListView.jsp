@@ -23,7 +23,7 @@
 		
 		<c:forEach items="${bookList}" var="book" >
 		<tr>
-			<td>${book.bookNo}</td>
+			<td><a href="<c:url value='/book/detailViewBook/${book.bookNo}'/>">${book.bookNo}</a></td>
 			<td>${book.bookName}</td>
 			<td>${book.bookAuthor}</td>
 			<td>${book.bookPrice}</td>

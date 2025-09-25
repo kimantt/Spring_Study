@@ -4,6 +4,8 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
  <mapper namespace="com.spring_mvc.mybatis2.dao.IBookDAO">
+ 
+ 	<!-- BookVO ResultMap -->
  	<resultMap type="com.spring_mvc.mybatis2.model.BookVO" id="bookResult">
  		<result property="bookNo" column="bookNo"/>
  		<result property="bookName" column="bookName"/>
@@ -14,7 +16,30 @@
  		<result property="pubNo" column="pubNo"/>
  	</resultMap>
  	
+ 	<!-- 전체 도서 목록 조회 -->
  	<select id="listAllBook" resultMap="bookResult">
  		select * from book order by bookNo
  	</select>
+ 	
+ 	<!-- 도서 등록 -->
+ 	<insert id="insertBook" parameterType="com.spring_mvc.mybatis2.model.BookVO">
+ 		insert into book values(#{bookNo}, #{bookName}, #{bookAuthor}, #{bookPrice}, #{bookDate}, #{bookStock}, #{pubNo})
+ 	</insert>
+ 	
+ 	<!-- 도서 상세정보 조회 -->
+ 	<select id="detailViewBook" parameterType="string" resultMap="bookResult">
+ 		select * from book where bookNo = #{bookNo}
+ 	</select>
+ 	
+ 	<!-- 도서정보 수정 -->
+ 	<update id="updateBook" parameterType="com.spring_mvc.mybatis2.model.BookVO">
+		 update book set bookName=#{bookName}, bookAuthor=#{bookAuthor}, bookPrice=#{bookPrice},
+		 				 bookDate=#{bookDate}, bookStock=#{bookStock}, pubNo=#{pubNo}
+		 				 where bookNo=#{bookNo}
+ 	</update>
+ 	
+ 	<!-- 도서정보 삭제 -->
+ 	<delete id="deleteBook" parameterType="string">
+ 		delete from book where bookNo=#{bookNo}
+ 	</delete>
  </mapper>

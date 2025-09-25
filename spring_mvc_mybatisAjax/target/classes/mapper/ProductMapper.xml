@@ -28,4 +28,28 @@
  	<select id="listAllProduct" resultMap="prdResult">
  		select * from product order by prdNo
  	</select>
+ 	
+ 	<!-- 변수자리에 사용할 수 있는 기호 : #{필드명/변수명}, ${필드명/변수명}
+ 		 #{} : preparedstatement의 ?
+ 		 ${} : statement의 변수
+ 	 -->
+ 	<insert id="insertProduct" parameterType="com.spring_mvc.mybatis.model.ProductVO">
+ 		insert into product values(#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock}, #{prdDate})
+ 	</insert>
+ 	
+ 	<!-- 상품 상세정보 조회 -->
+ 	<select id="detailViewProduct" parameterType="string" resultType="com.spring_mvc.mybatis.model.ProductVO">
+ 		select * from product where prdNo = #{prdNo}
+ 	</select>
+ 	
+ 	<!-- 상품 정보 수정 -->
+ 	<update id="updateProduct" parameterType="com.spring_mvc.mybatis.model.ProductVO">
+ 		update product set prdName=#{prdName}, prdPrice=#{prdPrice}, prdCompany=#{prdCompany},
+ 						   prdStock=#{prdStock}, prdDate=#{prdDate} where prdNo=#{prdNo}
+ 	</update>
+ 	
+ 	<!-- 상품 정보 삭제 -->
+ 	<delete id="deleteProduct" parameterType="string">
+ 		delete from product where prdNo=#{prdNo}
+ 	</delete>
  </mapper>

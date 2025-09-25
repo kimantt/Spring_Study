@@ -22,26 +22,22 @@ public class BookService implements IBookService {
 
 	@Override
 	public void insertBook(BookVO vo) {
-		// TODO Auto-generated method stub
-		
+		dao.insertBook(vo);
 	}
 
 	@Override
 	public void updateBook(BookVO vo) {
-		// TODO Auto-generated method stub
-		
+		dao.updateBook(vo);
 	}
 
 	@Override
 	public void deleteBook(String bookNo) {
-		// TODO Auto-generated method stub
-		
+		dao.deleteBook(bookNo);
 	}
 
 	@Override
 	public BookVO detailViewBook(String bookNo) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.detailViewBook(bookNo);
 	}
 
 }

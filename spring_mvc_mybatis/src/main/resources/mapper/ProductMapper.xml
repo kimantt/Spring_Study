@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- MyBatis에서는 현재 xml 문서가 Mapper의 역할을 한다는 정의와
+	 Mapper 태그의 문법을 정의하기 위한 DTD 정보를 요구함
+	 Mapper 문서에서는 반드시 Mapper를 표현하는 DTD 정보를 표현해야함
+ -->
+ 
+ <!-- 아래 mapper에서 구현되는 기능은 IProductDAO 추상메서드로 한정됨 -->
+ <mapper namespace="com.spring_mvc.mybatis.dao.IProductDAO">
+ 	<!-- 전체 상품 조회 : select 
+ 		 태그 관련 속성 : id : 태그 고유 식별자 (id가 추상메서드명과 동일해야함)
+ 		 			   parameterType
+ 		 			   resultType(반환 결과가 필요한 경우 자바 객체의 타입 지정) or resultMap(결과를 매핑하기 위한 외부 결과맵 참조)
+ 		 			   statementType : stmt 객체 유형 지정 (기본값 prepared)
+ 	-->
+ 	<!-- resultMap 구성 : 반환되는 rs의 컬럼과 저장해야하는 vo 클래스의 필드명을 매핑하는 역할 -->
+ 	<resultMap type="com.spring_mvc.mybatis.model.ProductVO" id="prdResult">
+ 		<result property="prdNo" column="prdNo"/>
+ 		<result property="prdName" column="prdName"/>
+ 		<result property="prdPrice" column="prdPrice"/>
+ 		<result property="prdCompany" column="prdCompany"/>
+ 		<result property="prdStock" column="prdStock"/>
+ 		<result property="prdDate" column="prdDate"/>
+ 	</resultMap>
+ 	
+ 	<select id="listAllProduct" resultMap="prdResult">
+ 		select * from product order by prdNo
+ 	</select>
+ 	
+ 	<!-- 변수자리에 사용할 수 있는 기호 : #{필드명/변수명}, ${필드명/변수명}
+ 		 #{} : preparedstatement의 ?
+ 		 ${} : statement의 변수
+ 	 -->
+ 	<insert id="insertProduct" parameterType="com.spring_mvc.mybatis.model.ProductVO">
+ 		insert into product values(#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock}, #{prdDate})
+ 	</insert>
+ 	
+ 	<!-- 상품 상세정보 조회 -->
+ 	<select id="detailViewProduct" parameterType="string" resultType="com.spring_mvc.mybatis.model.ProductVO">
+ 		select * from product where prdNo = #{prdNo}
+ 	</select>
+ 	
+ 	<!-- 상품 정보 수정 -->
+ 	<update id="updateProduct" parameterType="com.spring_mvc.mybatis.model.ProductVO">
+ 		update product set prdName=#{prdName}, prdPrice=#{prdPrice}, prdCompany=#{prdCompany},
+ 						   prdStock=#{prdStock}, prdDate=#{prdDate} where prdNo=#{prdNo}
+ 	</update>
+ 	
+ 	<!-- 상품 정보 삭제 -->
+ 	<delete id="deleteProduct" parameterType="string">
+ 		delete from product where prdNo=#{prdNo}
+ 	</delete>
+ </mapper>
