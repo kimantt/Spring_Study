@@ -15,7 +15,6 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.net.URLEncoder"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
     <fullyQualifiedTypeName name="com.spring.mvcProject.dao.MemberDAO"/>
@@ -26,7 +25,6 @@
     <fullyQualifiedTypeName name="org.springframework.format.annotation.DateTimeFormat"/>
     <fullyQualifiedTypeName name="com.spring_mvc.mybatis.service.IProductService"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="com.spring_mvc.mybatis.service.ProductService"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -38,7 +36,11 @@
     <fullyQualifiedTypeName name="com.spring_mvc.mybatis2.model.BookVO"/>
     <fullyQualifiedTypeName name="com.spring_mvc.mybatis2.service.BookService"/>
     <fullyQualifiedTypeName name="com.spring_mvc.mybatis2.dao.IBookDAO"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 </qualifiedTypeNameHistroy>

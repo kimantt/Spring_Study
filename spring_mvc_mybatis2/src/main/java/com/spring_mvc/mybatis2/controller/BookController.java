@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring_mvc.mybatis2.model.BookVO;
 import com.spring_mvc.mybatis2.service.BookService;
@@ -96,4 +98,22 @@ public class BookController {
 		// 삭제 후 전체 도서 목록 view 반환
 		return "redirect:/book/listAllBook";
 	}
+	
+	////////////////////////////////////////////////////////
+	// Ajax Study
+	
+	// 도서번호 중복검사 처리
+	@ResponseBody
+	@RequestMapping("/book/bookNoCheck")
+	public String bookNoCheck(@RequestParam("bookNo") String bookNo) {
+		String check_result = service.bookNoCheck(bookNo);
+		
+		String result = "available";
+		if (check_result != null) {
+			result = "no_available";
+		}
+		
+		return result;
+	}
+	
 }

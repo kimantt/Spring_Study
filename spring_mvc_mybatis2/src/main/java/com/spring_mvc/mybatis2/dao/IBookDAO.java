@@ -10,4 +10,5 @@ public interface IBookDAO {
 	void updateBook(BookVO vo);	     	  // 도서 정보 수정
 	void deleteBook(String bookNo);	 	  // 도서 정보 삭제
 	BookVO detailViewBook(String bookNo); // 도서 상세 조회
+	String bookNoCheck(String bookNo);	  // 도서번호 중복검사
 }

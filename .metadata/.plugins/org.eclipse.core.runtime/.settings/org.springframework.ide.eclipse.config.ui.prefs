@@ -18,5 +18,6 @@
 //com.springsource.config.ui.prefs.activePageIndex\:/spring_mvc_mybatis/src/main/resources/spring/application-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/spring_mvc_mybatis/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/spring_mvc_mybatis2/src/main/resources/spring/application-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/spring_mvc_mybatis2/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/spring_nvc_mybatis2/src/main/resources/spring/application-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 eclipse.preferences.version=1

@@ -42,4 +42,9 @@
  	<delete id="deleteBook" parameterType="string">
  		delete from book where bookNo=#{bookNo}
  	</delete>
+ 	
+ 	<!-- 도서번호 중복확인 -->
+ 	<select id="bookNoCheck" parameterType="string" resultType="string">
+ 		select bookNo from book where bookNo=#{bookNo}
+ 	</select>
  </mapper>

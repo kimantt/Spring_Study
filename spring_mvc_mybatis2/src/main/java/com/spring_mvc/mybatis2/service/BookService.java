@@ -40,4 +40,9 @@ public class BookService implements IBookService {
 		return dao.detailViewBook(bookNo);
 	}
 
+	@Override
+	public String bookNoCheck(String bookNo) {
+		return dao.bookNoCheck(bookNo);
+	}
+
 }

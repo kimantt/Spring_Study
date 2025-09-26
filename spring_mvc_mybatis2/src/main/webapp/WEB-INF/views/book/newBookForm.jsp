@@ -6,13 +6,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>BookForm</title>
+		<script src="<c:url value='/js/jquery-3.7.1.min.js'/>"></script>
+		<script src="<c:url value='/js/bookNoCheck.js'/>"></script>
 	</head>
 	<body>
 		<h3>도서 정보 등록</h3>
 		<form method="post" action="<c:url value='/book/insertBook'/>">
 			<table>
-				<tr><td>도서번호</td><td><input type="text" name="bookNo">
-				</td></tr>
+				<tr><td>도서번호</td><td><input type="text" name="bookNo" id="bookNo">
+					<button id="bookNoCheckBtn">중복확인</button></td></tr>
 				<tr><td>제목</td><td><input type="text" name="bookName"></td></tr>
 				<tr><td>저자</td><td> <input type="text" name="bookAuthor"></td></tr>
 				<tr><td>가격</td><td><input type="text" name="bookPrice"></td></tr>
