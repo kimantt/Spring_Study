@@ -24,8 +24,8 @@
 					<td><input type="text" name="bookDate"  value="<fmt:formatDate value="${book.bookDate}" pattern="YYYY-MM-dd" />"></td></tr>
 				<tr><td>재고량</td> 
 					<td><input type="text" name="bookStock"  value="${book.bookStock}"></td></tr>
-				<tr><td>출판사 번호</td> 
-					<td><input type="text" name="pubNo"  value="${book.pubNo}"></td></tr>
+				<tr><td>출판사</td> 
+					<td><input type="text" name="pubName"  value="${book.pubName}"></td></tr>
 				<tr><td colspan="2"><input type="submit" value="수정">
 				<input type="reset" value="취소"></td></tr>
 			</table>

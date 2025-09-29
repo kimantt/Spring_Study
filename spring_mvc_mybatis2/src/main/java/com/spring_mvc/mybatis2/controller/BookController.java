@@ -116,4 +116,10 @@ public class BookController {
 		return result;
 	}
 	
+	// 도서 검색 폼
+	@RequestMapping("/book/bookSearchForm")
+	public String bookSearchForm() {
+		return "book/bookSearchForm";
+	}
+	
 }

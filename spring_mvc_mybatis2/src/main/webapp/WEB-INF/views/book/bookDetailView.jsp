@@ -18,7 +18,7 @@
 				<tr><td>출판일</td>
 				<td><fmt:formatDate value="${book.bookDate}" pattern="yyyy-MM-dd" /></td></tr>
 				<tr><td>재고량</td><td>${book.bookStock}</td></tr>
-				<tr><td>출판사 번호</td><td>${book.pubNo}</td></tr>
+				<tr><td>출판사</td><td>${book.pubName}</td></tr>
 		</table>
 		<br>
 		<br>

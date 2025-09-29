@@ -20,7 +20,7 @@
 				<tr><td>가격</td><td><input type="text" name="bookPrice"></td></tr>
 				<tr><td>출판일</td> <td><input type="text" name="bookDate"></td></tr>
 				<tr><td>재고량</td> <td><input type="text" name="bookStock"></td></tr>
-				<tr><td>출판사 번호</td> <td><input type="text" name="pubNo"></td></tr>
+				<tr><td>출판사</td> <td><input type="text" name="pubName"></td></tr>
 				<tr><td colspan="2"><input type="submit" value="등록">
 				<input type="reset" value="취소"></td></tr>
 			</table>

@@ -13,7 +13,7 @@
  		<result property="bookPrice" column="bookPrice"/>
  		<result property="bookDate" column="bookDate"/>
  		<result property="bookStock" column="bookStock"/>
- 		<result property="pubNo" column="pubNo"/>
+ 		<result property="pubName" column="pubName"/>
  	</resultMap>
  	
  	<!-- 전체 도서 목록 조회 -->
@@ -23,7 +23,7 @@
  	
  	<!-- 도서 등록 -->
  	<insert id="insertBook" parameterType="com.spring_mvc.mybatis2.model.BookVO">
- 		insert into book values(#{bookNo}, #{bookName}, #{bookAuthor}, #{bookPrice}, #{bookDate}, #{bookStock}, #{pubNo})
+ 		insert into book values(#{bookNo}, #{bookName}, #{bookAuthor}, #{bookPrice}, #{bookDate}, #{bookStock}, #{pubName})
  	</insert>
  	
  	<!-- 도서 상세정보 조회 -->
@@ -34,7 +34,7 @@
  	<!-- 도서정보 수정 -->
  	<update id="updateBook" parameterType="com.spring_mvc.mybatis2.model.BookVO">
 		 update book set bookName=#{bookName}, bookAuthor=#{bookAuthor}, bookPrice=#{bookPrice},
-		 				 bookDate=#{bookDate}, bookStock=#{bookStock}, pubNo=#{pubNo}
+		 				 bookDate=#{bookDate}, bookStock=#{bookStock}, pubName=#{pubName}
 		 				 where bookNo=#{bookNo}
  	</update>
  	
@@ -46,5 +46,18 @@
  	<!-- 도서번호 중복확인 -->
  	<select id="bookNoCheck" parameterType="string" resultType="string">
  		select bookNo from book where bookNo=#{bookNo}
+ 	</select>
+ 	
+ 	<!-- 도서 검색 -->
+ 	<select id="bookSearch" parameterType="hashmap" resultMap="bookResult">
+ 		select * from book where
+	 		<choose>
+	 			<when test="type != null and type.equals('bookName')">
+	 				bookName like '%'||#{keyword}||'%'
+	 			</when>
+	 			<when test="type != null and type.equals('pubName')">
+	 				pubName like '%'||#{keyword}||'%'
+	 			</when>
+	 		</choose>
  	</select>
  </mapper>

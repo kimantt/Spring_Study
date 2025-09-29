@@ -200,12 +200,32 @@ public class ProductController {
 		return "product/productSearchForm1";
 	}
 	
+	// 상품검색 폼 요청 처리
+	@RequestMapping("/product/productSearchForm2")
+	public String productSearchForm2() {
+		return "product/productSearchForm2";
+	}
+	
+	// 상품검색 폼 요청 처리
+	@RequestMapping("/product/productSearchForm3")
+	public String productSearchForm3() {
+		return "product/productSearchForm3";
+	}
+	
 	// 상품 검색 처리
 	@ResponseBody
 	@RequestMapping("/product/productSearch1")
 	public ArrayList<ProductVO> productSearch1(@RequestParam HashMap<String, Object> param, Model model) {
 		ArrayList<ProductVO> prdList = service.productSearch(param);
-		model.addAttribute("prdList", prdList);
+		//model.addAttribute("prdList", prdList);
 		return prdList;
+	}
+	
+	// 상품 검색 처리
+	@RequestMapping("/product/productSearch2")
+	public String productSearch2(@RequestParam HashMap<String, Object> param, Model model) {
+		ArrayList<ProductVO> prdList = service.productSearch(param);
+		model.addAttribute("prdList", prdList);
+		return "product/productSearchResultView";
 	}
 }

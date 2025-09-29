@@ -18,7 +18,7 @@
 			<th>가격</th>
 			<th>출판일</th>
 			<th>재고량</th>
-			<th>출판사 번호</th>
+			<th>출판사</th>
 		</tr>
 		
 		<c:forEach items="${bookList}" var="book" >
@@ -29,7 +29,7 @@
 			<td>${book.bookPrice}</td>
 			<td><fmt:formatDate value="${book.bookDate}" pattern="yyyy-MM-dd"/></td>
 			<td>${book.bookStock}</td>
-			<td>${book.pubNo}</td>
+			<td>${book.pubName}</td>
 		</tr>
 		</c:forEach>		
 	</table>

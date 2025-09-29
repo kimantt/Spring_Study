@@ -1,6 +1,7 @@
 package com.spring_mvc.mybatis2.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.spring_mvc.mybatis2.model.BookVO;
 
@@ -11,4 +12,5 @@ public interface IBookDAO {
 	void deleteBook(String bookNo);	 	  // 도서 정보 삭제
 	BookVO detailViewBook(String bookNo); // 도서 상세 조회
 	String bookNoCheck(String bookNo);	  // 도서번호 중복검사
+	ArrayList<BookVO> bookSearch(HashMap<String, Object> map);  // 도서 검색
 }

@@ -12,7 +12,7 @@ public class BookVO {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date bookDate;
 	private int bookStock;
-	private String pubNo;
+	private String pubName;
 	
 	public String getBookNo() {
 		return bookNo;
@@ -50,10 +50,10 @@ public class BookVO {
 	public void setBookStock(int bookStock) {
 		this.bookStock = bookStock;
 	}
-	public String getPubNo() {
-		return pubNo;
+	public String getPubName() {
+		return pubName;
 	}
-	public void setPubNo(String pubNo) {
-		this.pubNo = pubNo;
+	public void setPubName(String pubName) {
+		this.pubName = pubName;
 	}
 }

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#prdSearchFrm1').on('submit', function() {
+	$('#prdSearchFrm3').on('submit', function() {
 		event.preventDefault(); // submit 이벤트 중지
 		
 		// 폼에 입력된 여러개의 값을 쿼리스트링 방식의 데이터로 변환 : serialize() 사용
@@ -15,7 +15,7 @@ $(document).ready(function() {
 		else {
 			$.ajax({
 				type:"post", // 요청 방식 메서드
-				url:"/mybatis/product/productSearch1", // 요청 url
+				url:"/mybatis/product/productSearch3", // 요청 url
 				data:formData, // 요청 시 전송될 파라미터
 				success:function(result) {
 					console.log(result);
